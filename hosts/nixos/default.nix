@@ -1,7 +1,5 @@
-{ config, inputs, pkgs, agenix, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
-let user = "user";
-    keys = [ "" ]; in
 {
   boot = {
     loader = {
@@ -36,11 +34,12 @@ let user = "user";
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;
-    flake = inputs.self.outPath;
     flags = [
       "--update-input"
     ];
     dates = "02:00";
+    rebootWindow.lower = "01:00";
+    rebootWindow.upper = "05:00";
     randomizedDelaySec = "45min";
   };
 
