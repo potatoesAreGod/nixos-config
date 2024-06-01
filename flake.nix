@@ -1,6 +1,4 @@
 {
-  description = "NixOS sewrver configuration";
-
   inputs = {
     # NixOS official package source, using the nixos-23.11 branch
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
@@ -20,7 +18,9 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 
-        ./hosts/nixos/default.nix 
+        ./hosts/nixos
+        ./modules/libreddit
+        ./modules/vnstat
 
         home-manager.nixosModules.home-manager
         {

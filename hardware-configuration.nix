@@ -24,6 +24,14 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/mnt/pny" = {
+    device = "/dev/disk/by-uuid/665A-E4E2";
+    fsType = "exfat";
+    options = [
+      "nofail"
+    ];
+  }
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
