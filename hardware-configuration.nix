@@ -29,6 +29,10 @@
     fsType = "exfat";
     options = [
       "nofail"
+      "rw"
+      "umask=000"
+      "exec"
+      "uid=100"
     ];
   };
 
