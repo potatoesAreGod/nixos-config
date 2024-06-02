@@ -11,15 +11,25 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.homeserver = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        vars = import ./hosts/nixos/vars.nix;
+      };
       modules = [
+        # Base config
         ./configuration.nix
-
         ./hosts/nixos/default.nix
+
+        # Local services
         ./modules/libreddit
+        ./modules/samba
+        ./containers/homeassistant
+
+        # Host-accsessible services
         ./modules/vnstat
 
+        # User config
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
