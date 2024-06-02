@@ -29,6 +29,9 @@
         # Host-accsessible services
         ./modules/vnstat
 
+        # Other services
+        ./modules/tor/relay
+
         # User config
         home-manager.nixosModules.home-manager
         {

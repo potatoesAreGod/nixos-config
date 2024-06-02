@@ -2,8 +2,8 @@
 
 let
   directories = [
-    "${vars.configRoot}/homeassistant""
-];
+    "${vars.configRoot}/homeassistant"
+  ];
 in
 {
   virtualisation.oci-containers = {
