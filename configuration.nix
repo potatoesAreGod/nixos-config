@@ -7,13 +7,13 @@
     ];
 
   # Networking
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "homeserver";
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 3000 8081 8123 9001 9030 ];
+    allowedTCPPorts = [ 22 3000 ];
     allowedUDPPorts = [];
-    allowPing = false;
+    allowPing = true;
   };
 
   users.users.user = {
