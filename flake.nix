@@ -18,13 +18,14 @@
       };
       modules = [
         # Base config
-        ./configuration.nix
+        ./modules/network/default.nix
         ./hosts/nixos/default.nix
 
         # Local services
         ./modules/libreddit
         ./modules/samba
         ./containers/homeassistant
+        ./containers/jellyfin
 
         # Host-accsessible services
         ./modules/vnstat
@@ -33,6 +34,7 @@
         ./modules/tor/relay
 
         # User config
+        ./users/user
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

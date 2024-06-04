@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    services.vnstat = {
-        enable = true;
-    };
+  services.vnstat = {
+    enable = true;
+  };
 }

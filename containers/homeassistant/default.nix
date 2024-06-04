@@ -17,7 +17,7 @@ in
         };
         extraOptions = [
           "--network=host"
-          "--device=/dev/ttyACM0:/dev/ttyACM0"
+          "--device=/dev/ttyACM0:/dev/ttyACM0" # zigbee controller
         ];
       };
     };

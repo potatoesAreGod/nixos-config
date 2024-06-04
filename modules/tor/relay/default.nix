@@ -13,8 +13,10 @@
       ExitPolicy = "reject *:*";
       HardwareAccel = 1;
       RelayBandwidthBurst  = "20 MB";
-      RelayBandwithRate = "10 MB";
-    };
+      RelayBandwidthRate = "10 MB";
+   };
+
+  # Enable relaying of traffic
    relay = {
      enable = true;
      role = "relay";
