@@ -49,12 +49,6 @@
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = with pkgs; [
-    wget
-    htop
-    git
-    curl
-  ];
 
   services.openssh = {
     enable = true;
