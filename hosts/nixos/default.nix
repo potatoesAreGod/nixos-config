@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ vars, inputs, config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -15,7 +15,7 @@
     };
   };
 
-  time.timeZone = "Europe/Stockholm";
+  time.timeZone = "${vars.timeZone}";
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Auto-clean of garbage and old logs

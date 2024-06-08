@@ -27,9 +27,6 @@
         ./containers/homeassistant
         ./containers/jellyfin
 
-        # Host-accsessible services
-        ./modules/vnstat
-
         # Other services
         ./modules/tor/relay
 
