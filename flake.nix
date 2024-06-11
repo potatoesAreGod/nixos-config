@@ -1,11 +1,11 @@
 {
   inputs = {
-    # NixOS official package source, using the nixos-23.11 branch
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    # NixOS official package source
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # Home manager, for user config
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,6 +15,7 @@
       system = "x86_64-linux";
       specialArgs = {
         vars = import ./hosts/nixos/vars.nix;
+        inherit inputs;
       };
       modules = [
         # Base config
@@ -37,6 +38,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.user = import ./users/user/home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
       ];
     };
