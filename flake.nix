@@ -22,14 +22,14 @@
         ./modules/network/default.nix
         ./hosts/nixos/default.nix
 
-        # Local services
-        ./modules/libreddit
+        # Services services
         ./modules/samba
-        ./containers/homeassistant
-        ./containers/jellyfin
-
-        # Other services
+        ./modules/jellyfin
         ./modules/tor/relay
+
+        # Docker containers
+        ./containers/homeassistant
+        ./containers/redlib
 
         # User config
         ./users/user
