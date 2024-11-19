@@ -9,7 +9,7 @@ in
   virtualisation.oci-containers = {
     containers = {
       homeassistant = {
-        image = "ghcr.io/home-assistant/home-assistant:stable";
+        image = "ghcr.io/home-assistant/home-assistant@sha256:2ddb0ceb186218e6daf423ac26be2e5a6ce1cd430c6064fe82d1d3d70b95cf38";
         autoStart = true;
         volumes = [ "${vars.configRoot}/homeassistant:/config" ];
         environment = {
