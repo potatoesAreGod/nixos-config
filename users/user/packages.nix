@@ -11,5 +11,6 @@
     ripgrep
     wget
     curl
+    nodejs_18
   ];
 }
